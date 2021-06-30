@@ -27,6 +27,92 @@
     <!-- image -->
     <img src="images/111.JPG" alt="My Picture">
 
+    <br>
+    <!--text formatting -->
+    <b><u><i>คณะวิทยาการจัดการ</i></u></b>
+    <br>
+    <strong>มหาวิทยาลัยสงขลานครินทร์</strong>
+    <br>
+    คณะวิทยาการจัดการ<sub>ม.อ.</sub>
+    <br>
+    คณะวิทยาการจัดการ<sup>ม.อ.</sup>
+
+    <!-- list -->
+    <ol type="i">ประเภทของสินค้า
+        <li>เสื้อผ้า</li>
+        <li>เครื่องสำอางค์</li>
+        <li>เฟอร์นิเจอร์</li>
+        <li>คอมพิวเตอร์</li>
+    </ol>
+    <ui type="circle">
+        <li>เสื้อผ้า</li>
+        <li>เครื่องสำอางค์</li>
+        <li>เฟอร์นิเจอร์</li>
+        <li>คอมพิวเตอร์</li>
+    </ul>
+
+    <!-- block & inline element -->
+    <div>
+        มหาวิทยาลัยสงขลานครินทร์
+    </div>
+    <span>มหาวิทยาลัยสงขลานครินทร์</span>
+    <span>คณะวิทยาการจัดการ</span>
+
+    <!-- table -->
+    <table border="1">
+        <tr>
+            <td>#</td>
+            <td>รหัสสินค้า</td>
+            <td>ชื่อสินค้า</td>
+            <td>รายละเอียด</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>PD001</td>
+            <td>โต๊ะทานข้าน</td>
+            <td>โต๊ะทานข้าว 4 ที่นั่ง</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>PD002</td>
+            <td>โซฟา</td>
+            <td>โซฟาไม้สัก</td>
+        </tr>
+    </table>
+
+    <!-- from -->
+    <h2>เข้าสู่ระบบ</h2>
+    <from method="Get" action="check_login.html" enctype="multipart/form-data">
+        <!-- <label for="username">รหัสผู้ใช้งาน</label> -->
+        <input type="text" id="username" placeholder="รหัสผู้ใช้งาน">
+        <br>
+        <label for="passwd">รหัสผ่าน</label>
+        <input type="password" id="passwd">
+        <br>
+        <input type="checkbox">จำรหัสผู้ใช้งาน
+        <br>
+        <input type="radio" name="user_type">นักศึกษา
+        <input type="radio" name="user_type">อาจารย์
+        <br>
+        <!-- <label for="desc">รายละเอียด</label> -->
+        <textarea id="desc" rows="5"></textarea>
+        <br>
+        <input type="file">
+        <br>
+        <select name="type">
+            <option value="1">ใช้งาน</option>
+            <option value="0">ยกเลิก</option>
+        </select>
+        <br>
+        <input type="submit" value="เข้าสู่ระบบ">
+        <input type="reset" value="ยกเลิก">
+        
+    </from>
+
+
+    <input type="button" value="ไม่ใช่ Submit ไม่ใช่ Reset">
+
+
     
 </body>
 
