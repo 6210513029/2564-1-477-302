@@ -9,8 +9,9 @@
     <script>
 
     </script>
-    <title>ทบทวน HTML 477-302 (1/64)</title>
+    <title>ทบทวน HTML ! 477-302 (1/64)</title>
 </head>
+
 <body>
     <!-- heading text -->
     <h1 name="title-h1" id="title-h1">Test title h1</h1>
@@ -19,13 +20,14 @@
     <h4>Test title h4</h4>
     <h5>Test title h5</h5>
     <h6>Test title h6</h6>
-
+    
     <!-- link -->
-    <a href="http://www.fms.psu.ac.th" target="_blank">คณะวิทยาการจัดการ</a>
-
+    <a href="https://www.fms.psu.ac.th" target="_blank">คณะวิทยาการจัดการ</a>
+    
     <!-- image -->
     <img src="images/111.jpg" alt="my picture">
 
+    <br>
     <!--text formatting -->
     <b><u><i>คณะวิทยาการจัดการ</i></u></b>
     <br>
@@ -42,24 +44,19 @@
         <li>เฟอร์นิเจอร์</li>
         <li>คอมพิวเตอร์</li>
     </ol>
-    <br>
-    <ul type="circle">ประเภทของสินค้า
+    <ui type="circle">
         <li>เสื้อผ้า</li>
         <li>เครื่องสำอางค์</li>
         <li>เฟอร์นิเจอร์</li>
         <li>คอมพิวเตอร์</li>
     </ul>
 
-    <!-- black and inline elements -->
-    <div>
-        มหาวิทยาลัยสงขลานครินทร์
-    </div>
+    <!-- block & inline element -->
     <div>
         มหาวิทยาลัยสงขลานครินทร์
     </div>
     <span>มหาวิทยาลัยสงขลานครินทร์</span>
     <span>คณะวิทยาการจัดการ</span>
-    <br>
 
     <!-- table -->
     <table border="1">
@@ -72,20 +69,21 @@
         <tr>
             <td>1</td>
             <td>PD001</td>
-            <td>โต๊ะทานข้าว</td>
+            <td>โต๊ะทานข้าน</td>
             <td>โต๊ะทานข้าว 4 ที่นั่ง</td>
         </tr>
         <tr>
             <td>2</td>
             <td>PD002</td>
             <td>โซฟา</td>
-            <td>โซฟาไม้สักบุผ้า</td>
+            <td>โซฟาไม้สัก</td>
         </tr>
     </table>
 
-    <!-- form -->
-    <form method="GET" action="check_login.html>
-        <!-- <label for="username">รหัสผู้ใช้งาน</label>  -->
+    <!-- from -->
+    <h2>เข้าสู่ระบบ</h2>
+    <from method="Get" action="check_login.html" enctype="multipart/form-data">
+        <!-- <label for="username">รหัสผู้ใช้งาน</label> -->
         <input type="text" id="username" placeholder="รหัสผู้ใช้งาน">
         <br>
         <label for="passwd">รหัสผ่าน</label>
@@ -97,22 +95,25 @@
         <input type="radio" name="user_type">อาจารย์
         <br>
         <!-- <label for="desc">รายละเอียด</label> -->
-        <textarea name="desc" rows="5"></textarea>
+        <textarea id="desc" rows="5"></textarea>
         <br>
         <input type="file">
         <br>
-        <select name="type">สถานะ
+        <select name="type">
             <option value="1">ใช้งาน</option>
             <option value="0">ยกเลิก</option>
         </select>
         <br>
         <input type="submit" value="เข้าสู่ระบบ">
-        <input type="reset" value="ยกเลิก"> 
+        <input type="reset" value="ยกเลิก">
         
-    </form>
+    </from>
+
 
     <input type="button" value="ไม่ใช่ Submit ไม่ใช่ Reset">
+
 
 </body>
 
 </html>
+
