@@ -1,0 +1,6 @@
+div, a { color:red; font-weight: bold}
+p { color:green; font-size: 2em}
+#description { color:blue; }
+.title { color: yellow;}
+body { font-style: italic; font-family: 'Times New Roman', Times, serif }
+#sub-desc { color: wheat;}
