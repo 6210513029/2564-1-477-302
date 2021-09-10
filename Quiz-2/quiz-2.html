@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-2</title>
+    <link rel="stylesheet" href="quiz-2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mali:wght@200&display=swap" rel="stylesheet">
+</head>
+<body onload="chkUsername()">
+    <div class="index">  
+    <header>
+            <h1>สมัครสมาชิก</h1>
+            <h2>กรุณากรอกข้อมูลให้ครบถ้วน</h2>
+    </header>
+    <form>
+        <br>
+        User Name: 
+        <input type="username" name="username" placeholder="กรอกชื่อผู้ใช้งาน">
+        Password:
+        <input type="password" name="password" placeholder="กรอกรหัสผ่าน">
+        <br>
+        <br>
+        ยืนยัน Password:
+        <input type="password" name="password" placeholder="กรอกรหัสผ่านอีกครั้ง">
+        <br>
+        <br>
+        First Name :
+        <input type="firstname" name="firstname" placeholder="กรอกชื่อ">
+        Last Name :
+        <input type="lastname" name="lastname" placeholder="กรอกนามสกุล">
+        <br>
+        <br>
+        E-mail :
+        <input type="email" name="email" placeholder="example@mail.com"> 
+        Phone :
+        <input type="phone" name="phone" placeholder="กรอกเบอร์โทรศัพท์">
+        <br>
+        <br>
+        Age:
+        <input type="age" name="age" placeholder="กรอกอายุ">
+        Birthday :
+        <label for="date"></label>
+        <input type="date" name="birthday">
+        <br>
+        <br>
+    </form>
+    
+    <center>
+        <p id="demo">ตำแหน่งของฉัน</p> 
+        <button onclick="getLocation()">ค้นหาตำแหน่ง</button>
+        <br>
+        <br>
+        <div id="mapholder"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoKoNVKdXRrp8YDgara5W1m2nfTU1dG5g&callback=initMap"
+  type="text/javascript"></script>
+        <script>
+        var x = document.getElementById("demo");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }       
+        function showPosition(position){
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            latlon = new google.maps.LatLng(lat, lon)
+            mapholder = document.getElementById('mapholder')
+            mapholder.style.height = '350px';
+            mapholder.style.width = '500px';
+
+            var myOptions = {
+                center: latlon,
+                zoom:12,
+                mapTypeId:google.maps.MapTypeId.ROADMAP,
+                mapTypeControl:false,
+                navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+            }
+
+            var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+            var marker = new google.maps.Marker({position:latlon, map:map, title:"You are here!"});
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+            }
+        }
+        </script>
+        <script>
+        function chkUsername() {
+            if(typeof(Storage) !== "undefined") {
+                if (localStorage.username) {
+                    document.getElementById("div1").innerHTML = localStorage.username;
+                } else {
+                    document.getElementById("div1").innerHTML = "<input type='text' placeholder='กรอกชื่อผู้ใช้งาน' id='username'>";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+        function saveUsername() {
+            uname = document.getElementById("username");
+            localStorage.username = uname.value;
+            chkUsername();
+        }
+        function delUsername() {
+            localStorage.removeItem("username");
+            chkUsername();
+        }
+        </script>
+    <form> 
+        <center>
+            <br>
+            <input type="button" value="Submit" onclick="dialog()"> 
+            <dialog id="dialog">ระบบได้รับข้อมูลของท่านแล้ว  
+            <br>
+            <br>
+                <button onclick="getLocation()">ตกลง</button>
+            </dialog>
+            <script>
+                function dialog() {
+                  var x=document.getElementById("dialog");
+                  x.open=true
+            }
+            </script>
+        </center>
+    </form>
+        <footer>
+            <br>
+            กรณีที่ต้องการบันทึก Username : <div id="div1"></div>
+            <p><button onclick="saveUsername()" type="button">บันทึก</button>
+            <button onclick="delUsername()" type="button">ยกเลิกการบันทึก</button></p>
+            <div id="result"></div>
+        </footer>
+        </center>
+    </div>
+</body>
+</html>
