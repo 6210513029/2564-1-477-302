@@ -29,9 +29,9 @@
 				<!--6.if already logged in, change menu items --> 
 				<!-- isset เป็นคำถาม  yes no true false ถ้า login ผ่าน จะแสดงหน้าต่าง -->
 				<?php if (isset($_SESSION['id'])) { ?>
-					<li><p class="navber-text">Signed in as <?php echo $_SESSION['name'];?></p></li>
+					<li><p class="navbar-text">Signed in as <?php echo $_SESSION['name']; ?></p></li>
 					<li><a href="logout.php">Log Out</a></li>
-				<?php} else { ?>
+				<?php } else { ?>
 					<li><a href="login.php">Login</a></li>
 					<li><a href="register.php">Sign Up</a></li>
 					<li><a href="admin_login.php">Admin</a></li>
