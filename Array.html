@@ -1,0 +1,14 @@
+<html>
+<body>
+    <p>Array Example</p>
+    <p id="demo"></p>
+        <script>
+            // covid infected cases 7  ddays
+            var covid_cases = {seventh:18500, sixth:18000, fifth:17500, fourth:17000, thrid:16500 , second:16000, first:15500};
+            var total_cases = parseInt("seventh") + parseInt("sixth") + parseInt("fifth") + parseInt("fourth") + parseInt("thrid") + parseInt("second") + parseInt("first");
+            document.getElementById("demo").innerHTML =
+            "Number of cases in 7 days" + covid_cases["fifth"] +
+            " Total cases in 7  days" + total_cases;
+        </script>
+</body>
+</html>

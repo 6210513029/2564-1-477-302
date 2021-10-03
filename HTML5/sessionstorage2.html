@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <title>TITLE</title>
+     <meta name="description" content="DESCRIPTION">
+    <link rel="stylesheet" href="PATH">
+    <script>
+    function chkUsername() {
+        if(typeof(Storage) !== "undefined") {
+            if (sessionStorage.username) {
+                document.getElementById("div1").innerHTML = sessionStorage.username;
+            } else {
+                document.getElementById("div1").innerHTML = "<input type='text' id='username'>";
+            }
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+    }
+    function saveUsername() {
+        uname = document.getElementById("username");
+        sessionStorage.username = uname.value;
+        chkUsername();
+    }
+    function delUsername() {
+        sessionStorage.removeItem("username");
+        chkUsername();
+    }
+    </script>
+
+     <!--[if lt IE 9]>
+       <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+</head>
+<body onload="chkUsername()">
+
+    User Name:<div id="div1"></div>
+    Password:<div id="div2"><input type="password" id="password"></div>
+    <p><button onclick="saveUsername()" type="button">Save</button>
+    <button onclick="delUsername()" type="button">Delete</button></p>
+    <div id="result"></div>
+
+</body>
+</html>

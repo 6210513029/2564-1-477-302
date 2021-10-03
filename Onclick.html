@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script type="text/javascript">
+    function popup() {
+        alert("Test javascript event handler.");
+    }
+</script>    
+</head>
+<body>
+    <input type="button" value="Click Me!" onclick=popup()><br />
+    <a href="#" onmouseover="" onmouseout="popup()">Hover Me!</a>
+    <button onclick="document.getElementById('showtime').innerHTML">Check Time</button>
+    <div id="showtime"></div> 
+    <form action="#" method="GET">
+        <input type="text">
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+</html>

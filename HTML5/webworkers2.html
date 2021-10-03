@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 Web Worker</title>
+<script type="text/javascript">
+    // Set up global variable
+    var worker;
+
+    function startWorker(){
+        // Initialize web worker
+        worker = new Worker("worker.js");
+
+        // Run update function, when we get a message from worker
+        worker.onmessage = update;
+
+        // Tell worker to get started
+        worker.postMessage("start");
+    }
+
+    function update(event){
+        // Update the page with current message from worker
+        document.getElementById("result").innerHTML = event.data;
+    }
+
+    function stopWorker(){
+        // Stop the worker
+        worker.terminate();
+    }
+</script>
+</head>
+<body>
+    <h1>Web Worker Demo</h1>
+    <button onclick="startWorker();" type="button">Start web worker</button>
+    <button type="button" onclick="stopWorker();">Stop web worker</button>
+    <div id="result">
+        <!--Received messages will be inserted here-->
+    </div>
+</body>
+</html>
